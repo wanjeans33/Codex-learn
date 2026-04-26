@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex 使用教学站点</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="eyebrow">AI 工程助手实战指南</p>
+        <h1>Codex 使用教学</h1>
+        <p class="subtitle">
+          一站式了解 Codex 的核心工作流：Plan Mode、Custom Agent、Agent Skill，
+          并快速看懂它和 Claude Code、GitHub Copilot 的差异。
+        </p>
+        <a class="btn" href="#features">开始学习</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="container" id="features">
+        <h2>Codex 关键功能</h2>
+        <div class="grid cards">
+          <article class="card" id="plan-mode">
+            <h3>1) Plan Mode（计划模式）</h3>
+            <p>
+              将复杂任务拆解成可执行步骤（如：调研 → 改代码 → 测试 → 提交），并在执行前给你可审阅的计划。
+            </p>
+            <ul>
+              <li>适合多阶段任务，减少“直接改错方向”的风险。</li>
+              <li>便于团队协作：先对齐思路，再执行。</li>
+              <li>支持阶段性更新，随时修订计划。</li>
+            </ul>
+          </article>
+
+          <article class="card" id="custom-agent">
+            <h3>2) Custom Agent（自定义代理）</h3>
+            <p>
+              你可以定义自己的执行偏好和规则，例如代码风格、测试标准、提交规范，让代理行为更贴近团队流程。
+            </p>
+            <ul>
+              <li>固定输出格式（如 PR 模板、日志模板）。</li>
+              <li>固定工具链（测试、构建、检查命令）。</li>
+              <li>减少重复指令，提高稳定性。</li>
+            </ul>
+          </article>
+
+          <article class="card" id="agent-skill">
+            <h3>3) Agent Skill（技能体系）</h3>
+            <p>
+              Skill 是可复用的能力包（带流程、脚本、模板）。针对某类任务触发后，代理会按技能说明执行。
+            </p>
+            <ul>
+              <li>适合标准化高频任务（如发布流程、文档生成）。</li>
+              <li>支持“按需加载”，避免一次塞入过多上下文。</li>
+              <li>可持续迭代：技能本身可版本化管理。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>快速上手流程（推荐）</h2>
+        <ol class="timeline">
+          <li>明确目标：例如“修复支付回调 bug 并补测试”。</li>
+          <li>用 Plan Mode 拆任务并确认里程碑。</li>
+          <li>调用或配置 Custom Agent（约束代码风格和提交要求）。</li>
+          <li>在合适步骤触发 Agent Skill（如自动生成变更日志）。</li>
+          <li>运行测试与检查，提交并生成 PR。</li>
+        </ol>
+      </section>
+
+      <section class="container" id="comparison">
+        <h2>对比：Claude Code vs GitHub Copilot vs Codex</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>能力维度</th>
+                <th>Claude Code</th>
+                <th>GitHub Copilot</th>
+                <th>Codex</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>计划驱动（Plan Mode）</td>
+                <td>有任务规划能力，模式呈现依产品形态而定</td>
+                <td>以编辑器内补全/对话为主，计划流程相对轻量</td>
+                <td><strong>强调可审阅的分步计划与执行状态</strong></td>
+              </tr>
+              <tr>
+                <td>自定义代理（Custom Agent）</td>
+                <td>可通过提示与配置形成偏好</td>
+                <td>可借助指令与仓库上下文增强</td>
+                <td><strong>支持更工程化的代理行为约束</strong></td>
+              </tr>
+              <tr>
+                <td>技能机制（Agent Skill）</td>
+                <td>可通过工作流封装实现部分复用</td>
+                <td>依赖扩展生态与提示模板</td>
+                <td><strong>原生强调“技能化”复用流程与脚本</strong></td>
+              </tr>
+              <tr>
+                <td>终端/仓库执行闭环</td>
+                <td>具备较强代码与命令协作能力</td>
+                <td>IDE 场景强，端到端自动执行视配置而定</td>
+                <td><strong>面向代码库任务闭环（改、测、提）</strong></td>
+              </tr>
+              <tr>
+                <td>适合人群</td>
+                <td>重视高质量对话与分析的开发者</td>
+                <td>日常编码补全与 IDE 内提效用户</td>
+                <td><strong>希望把 AI 纳入工程流程的团队/个人</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          说明：不同产品能力会快速演进，具体功能以各平台最新官方文档为准。
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <p>© Codex 教学示例站点</p>
+        <button id="theme-toggle" type="button">切换主题</button>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
