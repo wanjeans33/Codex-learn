@@ -1,0 +1,124 @@
+:root {
+  --bg: #0b1020;
+  --card: #131a2b;
+  --text: #ecf1ff;
+  --muted: #9aa7c2;
+  --brand: #6aa7ff;
+  --brand-2: #7ce0b8;
+  --border: #28324b;
+}
+
+body.light {
+  --bg: #f5f8ff;
+  --card: #ffffff;
+  --text: #1e2738;
+  --muted: #4d5f82;
+  --brand: #2459d6;
+  --brand-2: #0e8f65;
+  --border: #dce3f2;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 5rem 0 4rem;
+  background: radial-gradient(circle at 10% 10%, rgba(106, 167, 255, 0.25), transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(124, 224, 184, 0.2), transparent 30%);
+}
+
+.eyebrow { color: var(--brand-2); font-weight: 700; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); margin: 0.3rem 0 0.8rem; }
+.subtitle { color: var(--muted); max-width: 760px; }
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color: #fff;
+  padding: 0.75rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+section { padding: 2rem 0; }
+h2 { font-size: 1.6rem; margin-bottom: 1rem; }
+
+.grid.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.card h3 { margin-top: 0; }
+.card ul { padding-left: 1.1rem; margin-bottom: 0; }
+
+.timeline {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.5rem;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+  background: var(--card);
+}
+
+th, td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.8rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th { background: rgba(106, 167, 255, 0.12); }
+.note { color: var(--muted); }
+
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 2rem;
+}
+
+#theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
